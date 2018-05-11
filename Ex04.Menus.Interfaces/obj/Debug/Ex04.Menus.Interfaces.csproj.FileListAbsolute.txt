@@ -1,2 +1,7 @@
 C:\Users\CHEN\Desktop\Solution1\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.exe.config
 C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.exe.config
+C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.exe
+C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
+C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.exe
+C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb
