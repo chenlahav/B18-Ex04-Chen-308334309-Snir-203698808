@@ -21,14 +21,26 @@ namespace Ex04.Menus.Interfaces
         {
             return m_MenuItems[i_index];
         }
+
+        public List<MenuItem> GetMenuItems()
+        {
+            return m_MenuItems;
+        }
+
+        public void SetMenuItems(List<MenuItem> i_NewMenuItems)
+        {
+            m_MenuItems = i_NewMenuItems;
+        }
+
         public void AddItem(MenuItem i_MenuItem)
         {
             m_MenuItems.Add(i_MenuItem);
         }
 
-        public override int Select(int i_Level)
+        public override int? Select(int i_Level, ref SubMenu i_SubMenu)
         {
             m_CurrentLevel = i_Level;
+            i_SubMenu = this;
             return ShowMenuAndGetSelectionUser();
 
         }
