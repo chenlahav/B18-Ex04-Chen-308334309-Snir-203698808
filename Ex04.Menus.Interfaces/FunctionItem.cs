@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class FunctionItem : MenuItem
+    public class FunctionItem : MenuItem
     {
         private IFunction m_Function;
 

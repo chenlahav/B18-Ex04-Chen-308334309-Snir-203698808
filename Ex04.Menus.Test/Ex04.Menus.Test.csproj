@@ -49,6 +49,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
+      <Project>{1878e8fc-e528-44ce-bb49-336fe4e0f681}</Project>
+      <Name>Ex04.Menus.Delegates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
+      <Project>{0dddfcf7-f19d-4664-9868-1b249e4f91ec}</Project>
+      <Name>Ex04.Menus.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

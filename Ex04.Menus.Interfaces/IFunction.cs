@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    internal interface IFunction
+    public interface IFunction
     {
         void Invoke();
     }

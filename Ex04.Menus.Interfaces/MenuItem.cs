@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    internal abstract class MenuItem
+    public abstract class MenuItem
     {
          public string Title {get; }
         public abstract int? Select(int i_Level, ref SubMenu i_SubMenu);

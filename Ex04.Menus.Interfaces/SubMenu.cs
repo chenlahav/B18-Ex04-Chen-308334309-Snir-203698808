@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class SubMenu : MenuItem
+    public class SubMenu : MenuItem
     {
         private List<MenuItem> m_MenuItems;
-        private int m_CurrentLevel;
         
         public SubMenu(string i_Title, MenuItem i_Father) : base(i_Title)
         {
@@ -39,19 +38,16 @@ namespace Ex04.Menus.Interfaces
 
         public override int? Select(int i_Level, ref SubMenu i_SubMenu)
         {
-            m_CurrentLevel = i_Level;
             i_SubMenu = this;
-            return ShowMenuAndGetSelectionUser();
+            return ShowMenuAndGetSelectionUser(i_Level);
 
         }
-        public int ShowMenuAndGetSelectionUser()
+        public int ShowMenuAndGetSelectionUser(int i_Level)
         {
-            int i = 1;
-
             Console.WriteLine(Title);
-            Console.WriteLine($"Level {m_CurrentLevel}");
+            Console.WriteLine($"Level {i_Level}");
 
-            if (m_CurrentLevel == 1)
+            if (i_Level == 1)
             {
                 Console.WriteLine("0 - Exit");
             }
@@ -61,10 +57,9 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine("0 - Back");
             }
 
-            foreach (MenuItem item in m_MenuItems)
-            {
-                Console.WriteLine($"{i} - {item.Title}");
-                i++;
+            for(int i=1; i<m_MenuItems.Count; i++)
+            { 
+                Console.WriteLine($"{i} - {m_MenuItems[i].Title}");
             }
 
             int selection = 0;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MainMenu 
+    public class MainMenu 
     {
         private SubMenu m_Menu;
         private int m_Level = 1;
@@ -16,9 +16,14 @@ namespace Ex04.Menus.Interfaces
             m_Menu = new SubMenu("MainMenu", null);
         }
 
-        public void addMenuItem(MenuItem i_MenuItem)
+        public void AddMenuItem(MenuItem i_MenuItem)
         {
             m_Menu.AddItem(i_MenuItem);
+        }
+
+        public SubMenu GetSubMenu()
+        {
+            return m_Menu;
         }
 
         public void Show()
@@ -27,9 +32,10 @@ namespace Ex04.Menus.Interfaces
             int? selectionTemporary = 0;
             do
             {
-                if(m_Level == 1)
+                if(m_Level == 1 || selectionTemporary == null)
                 {
-                    selection = m_Menu.ShowMenuAndGetSelectionUser();
+                    selection = m_Menu.ShowMenuAndGetSelectionUser(m_Level);
+                    selectionTemporary = 0;
                 }
 
                 else
@@ -41,10 +47,16 @@ namespace Ex04.Menus.Interfaces
                     }
                 }
 
-                if (selection == 0 && m_Level != 1)
+                if (selectionTemporary == null)
                 {
                     m_Level--;
-                    m_Menu.SetMenuItems(((SubMenu)m_Menu.GetMenuItem(selection)).GetMenuItems());
+                }
+
+                else if (selection == 0 && m_Level != 1)
+                {
+                    m_Level--;
+                    m_Menu.SetMenuItems(((SubMenu)m_Menu.GetMenuItem(0)).GetMenuItems());
+                    continue;
                 }
                 
                 else if (selection !=0 && selectionTemporary !=null)
