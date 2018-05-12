@@ -19,9 +19,10 @@ namespace Ex04.Menus.Interfaces
         {
             m_Function = i_Function;
         }
-        public override void Select(int i_Level)
+        public override int Select(int i_Level)
         {
             m_Function.Invoke();
+            return 0;
         }
 
 

@@ -28,7 +28,7 @@ namespace Ex04.Menus.Interfaces
             {
                 if(m_Level == 1)
                 {
-                    m_Menu.ShowMenu();
+                    selection = m_Menu.ShowMenuAndGetSelectionUser();
                 }
 
                 else
@@ -36,17 +36,17 @@ namespace Ex04.Menus.Interfaces
                     m_Menu.GetMenuItem(selection).Select(m_Level);
                 }
 
-                Console.Write("Choose one of the options: ");
-                bool result = int.TryParse(Console.ReadLine(), out selection);
-                while (!result)
+                if (selection == 0)
                 {
-                    Console.Write("Invalid input\nChoose one of the options: ");
-                    result = int.TryParse(Console.ReadLine(), out selection);
-                    //TODO: validate number is less or equal to option number
+                    m_Level--;
                 }
-                m_Level++;
+                
+                else
+                {
+                    m_Level++;
+                }
             }
-            while (selection != 0);
+            while (!(selection == 0 && m_Level == 1));
 
             Console.WriteLine("Thank you!\nBye Bye..");
         }

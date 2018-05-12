@@ -9,7 +9,7 @@ namespace Ex04.Menus.Interfaces
     internal abstract class MenuItem
     {
          public string Title {get; }
-        public abstract void Select(int i_Level);
+        public abstract int Select(int i_Level);
 
         public MenuItem(string i_Title)
         {

@@ -10,6 +10,7 @@ namespace Ex04.Menus.Interfaces
     {
         private List<MenuItem> m_MenuItems;
         private int m_CurrentLevel;
+        
         public SubMenu(string i_Title, MenuItem i_Father) : base(i_Title)
         {
             m_MenuItems = new List<MenuItem>();
@@ -25,13 +26,13 @@ namespace Ex04.Menus.Interfaces
             m_MenuItems.Add(i_MenuItem);
         }
 
-        public override void Select(int i_Level)
+        public override int Select(int i_Level)
         {
             m_CurrentLevel = i_Level;
-            ShowMenu();
+            return ShowMenuAndGetSelectionUser();
 
         }
-        public void ShowMenu()
+        public int ShowMenuAndGetSelectionUser()
         {
             int i = 1;
 
@@ -53,6 +54,18 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine($"{i} - {item.Title}");
                 i++;
             }
+
+            int selection = 0;
+            Console.Write("Choose one of the options: ");
+            bool result = int.TryParse(Console.ReadLine(), out selection);
+            while (!result)
+            {
+                Console.Write("Invalid input\nChoose one of the options: ");
+                result = int.TryParse(Console.ReadLine(), out selection);
+                //TODO: validate number is less or equal to option number
+            }
+
+            return selection;
         }
     }
 }
