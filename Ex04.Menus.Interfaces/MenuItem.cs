@@ -6,53 +6,15 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MenuItem
+    internal abstract class MenuItem
     {
-        private readonly List<MenuItem> m_MenuItems;
+         public string Title {get; }
+        public abstract void Select(int i_Level);
 
-        private readonly List<IRunable> m_RunableObservers = new List<IRunable>();
-
-        public MenuItem(List<MenuItem> i_MenuItems)
+        public MenuItem(string i_Title)
         {
-            m_MenuItems = i_MenuItems;
+            Title = i_Title;
         }
-
-        public void AttachObserver(IRunable i_RunableObserver)
-        {
-            m_RunableObservers.Add(i_RunableObserver);
-        }
-
-        public void DetachObserver(IRunable i_RunableObserver)
-        {
-            m_RunableObservers.Remove(i_RunableObserver);
-        }
-
-        public void doWhenItemWasSelected()
-        {
-            if (m_MenuItems == null)
-            {
-                showMenu();
-            }
-
-            else
-            {
-                notifyRunableObservers();
-            }
-        }
-
-        private void showMenu()
-        {
-            //TODO: show the sub menu
-        }
-
-        private void notifyRunableObservers()
-        {
-            foreach (IRunable observer in m_RunableObservers)
-            {
-                observer.Run();
-            }
-        }
-
 
     }
 }
