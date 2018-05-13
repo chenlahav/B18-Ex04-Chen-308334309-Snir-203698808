@@ -8,7 +8,7 @@ namespace Ex04.Menus.Delegates
 {
     public abstract class MenuItem
     {
-         public string Title { get; set; }
+        public string Title { get; set; }
         public abstract int? Select(int i_Level, ref SubMenu i_SubMenu);
 
         public MenuItem(string i_Title)

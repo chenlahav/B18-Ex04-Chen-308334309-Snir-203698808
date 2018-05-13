@@ -8,20 +8,20 @@ namespace Ex04.Menus.Delegates
 {
     public class FunctionItem : MenuItem
     {
-        private IFunction m_Function;
+        private SelectFunctionDelegate m_SelectFunctionDelegate;
 
         public FunctionItem(string i_Title) : base(i_Title)
         {
             
         }
 
-        public void AddFunction(IFunction i_Function)
+        public void AddFunction(SelectFunctionDelegate i_FunctionDelegate)
         {
-            m_Function = i_Function;
+            m_SelectFunctionDelegate += i_FunctionDelegate;
         }
         public override int? Select(int i_Level, ref SubMenu i_SubMenu)
         {
-            m_Function.Invoke();
+            m_SelectFunctionDelegate.Invoke();
             return null;
         }
 

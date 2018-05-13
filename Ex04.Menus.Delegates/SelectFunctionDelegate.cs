@@ -6,10 +6,5 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+    public delegate void SelectFunctionDelegate();
 }
