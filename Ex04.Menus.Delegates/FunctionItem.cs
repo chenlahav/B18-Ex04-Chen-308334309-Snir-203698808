@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
+
+    public delegate void Invoke();
     public class FunctionItem : MenuItem
     {
-        private IFunction m_Function;
+        
+        private Invoke m_Function;
 
         public FunctionItem(string i_Title) : base(i_Title)
         {
             
         }
 
-        public void AddFunction(IFunction i_Function)
+        public void AddFunction(Invoke i_Function)
         {
             m_Function = i_Function;
         }

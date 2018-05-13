@@ -5,3 +5,10 @@ C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus
 C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll.config
 C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
 C:\Users\CHEN\Documents\GitHub\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll.config
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\snirkol\Source\Repos\B18-Ex04-Chen-308334309-Snir-203698808\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb
