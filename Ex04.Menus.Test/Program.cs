@@ -23,7 +23,7 @@ namespace Ex04.Menus.Test
             Delegates.SubMenu dateTimeMenu = new Delegates.SubMenu("Show Date/Time", m_MainMenu.GetSubMenu());
             Delegates.FunctionItem showTime = new Delegates.FunctionItem("Show Time");
             ShowTime showTimeInstance = new ShowTime();
-            showTime.AddFunction(new Invoke(showTimeInstance.Invoke));
+            showTime.AddFunction(new SelectFunctionDelegate(showTimeInstance.Invoke));
             dateTimeMenu.AddItem(showTime);
             Delegates.FunctionItem showDate = new Delegates.FunctionItem("Show Date");
             ShowDate showDateInstance = new ShowDate();
