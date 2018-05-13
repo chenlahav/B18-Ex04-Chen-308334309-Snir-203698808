@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
+    public delegate void SelectFunctionDelegate();
+
     public class FunctionItem : MenuItem
     {
         private SelectFunctionDelegate m_SelectFunctionDelegate;
