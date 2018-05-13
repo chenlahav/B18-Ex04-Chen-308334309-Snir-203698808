@@ -29,8 +29,11 @@
 /.vs/B18 Ex04 Chen 308334309 Snir 203698808/v15/Server/sqlite3
 /.vs/B18 Ex04 Chen 308334309 Snir 203698808/v15
 /.vs
-/Ex04.Menus.Delegates
 /Ex04.Menus.Interfaces/obj
 /Ex04.Menus.Interfaces/bin/Debug
 /Ex04.Menus.Interfaces/bin/Debug/Ex04.Menus.Interfaces.dll
 /Ex04.Menus.Interfaces/obj/Debug/Ex04.Menus.Interfaces.dll
+/Ex04.Menus.Delegates/bin/Debug
+/Ex04.Menus.Delegates/obj/Release
+/Ex04.Menus.Delegates/obj/Debug/Ex04.Menus.Delegates.csproj.CoreCompileInputs.cache
+/Ex04.Menus.Delegates/obj/Debug/Ex04.Menus.Delegates.csprojResolveAssemblyReference.cache
