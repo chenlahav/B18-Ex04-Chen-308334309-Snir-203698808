@@ -45,7 +45,6 @@ namespace Ex04.Menus.Delegates
         public int ShowMenuAndGetSelectionUser(int i_Level)
         {
             Console.WriteLine($"====== {Title} ====== (level {i_Level})");
-            //Console.WriteLine($"Level {i_Level}");
 
             if (i_Level == 1)
             {
@@ -65,11 +64,10 @@ namespace Ex04.Menus.Delegates
             int selection = 0;
             Console.Write("Choose one of the options: ");
             bool result = int.TryParse(Console.ReadLine(), out selection);
-            while (!result || selection> m_MenuItems.Count || selection < 0)
+            while (!result || selection > m_MenuItems.Count || selection < 0)
             {
                 Console.Write("Invalid input\nChoose one of the options: ");
                 result = int.TryParse(Console.ReadLine(), out selection);
-                //TODO: validate number is less or equal to option number
             }
 
             return selection;
