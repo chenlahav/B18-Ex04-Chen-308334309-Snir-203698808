@@ -47,7 +47,7 @@ namespace Ex04.Menus.Interfaces
                     }
                 }
 
-                if (selectionTemporary == null)
+                if (selectionTemporary == null || (selection == 0 && m_Level == 1))
                 {
                     m_Level--;
                 }
@@ -55,18 +55,21 @@ namespace Ex04.Menus.Interfaces
                 else if (selection == 0 && m_Level != 1)
                 {
                     m_Level--;
+                    m_Menu.Title = ((SubMenu)m_Menu.GetMenuItem(0)).Title;
                     m_Menu.SetMenuItems(((SubMenu)m_Menu.GetMenuItem(0)).GetMenuItems());
-                    continue;
+                    Console.Clear();
                 }
                 
                 else if (selection !=0 && selectionTemporary !=null)
                 {
                     m_Level++;
+                    Console.Clear();
                 }
             }
-            while (!(selection == 0 && m_Level == 1));
+            while (!(selection == 0 && m_Level == 0));
 
             Console.WriteLine("Thank you!\nBye Bye..");
+            Console.ReadLine();
         }
     }
 }

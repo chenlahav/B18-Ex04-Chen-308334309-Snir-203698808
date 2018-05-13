@@ -44,8 +44,8 @@ namespace Ex04.Menus.Interfaces
         }
         public int ShowMenuAndGetSelectionUser(int i_Level)
         {
-            Console.WriteLine(Title);
-            Console.WriteLine($"Level {i_Level}");
+            Console.WriteLine($"====== {Title} ====== (level {i_Level})");
+            //Console.WriteLine($"Level {i_Level}");
 
             if (i_Level == 1)
             {
