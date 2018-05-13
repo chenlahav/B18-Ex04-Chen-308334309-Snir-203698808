@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ex04.Menus.Interfaces;
+using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
@@ -11,21 +12,26 @@ namespace Ex04.Menus.Test
     {
         static void Main(string[] args)
         {
-            MainMenu m_MainMenu = new MainMenu();
+            InterfaceTest();
+        }
 
-            SubMenu dateTimeMenu = new SubMenu("Show Date/Time", m_MainMenu.GetSubMenu());
-            FunctionItem showTime = new FunctionItem("Show Time");
+        private static void InterfaceTest()
+        {
+            Interfaces.MainMenu m_MainMenu = new Interfaces.MainMenu();
+
+            Interfaces.SubMenu dateTimeMenu = new Interfaces.SubMenu("Show Date/Time", m_MainMenu.GetSubMenu());
+            Interfaces.FunctionItem showTime = new Interfaces.FunctionItem("Show Time");
             showTime.AddFunction(new ShowTime());
             dateTimeMenu.AddItem(showTime);
-            FunctionItem showDate = new FunctionItem("Show Date");
+            Interfaces.FunctionItem showDate = new Interfaces.FunctionItem("Show Date");
             showDate.AddFunction(new ShowDate());
             dateTimeMenu.AddItem(showDate);
 
-            SubMenu versionAndCapitalsMenu = new SubMenu("Version and Capitals", m_MainMenu.GetSubMenu());
-            FunctionItem countCapitals = new FunctionItem("Count Capitals");
+            Interfaces.SubMenu versionAndCapitalsMenu = new Interfaces.SubMenu("Version and Capitals", m_MainMenu.GetSubMenu());
+            Interfaces.FunctionItem countCapitals = new Interfaces.FunctionItem("Count Capitals");
             countCapitals.AddFunction(new CountCapitals());
             versionAndCapitalsMenu.AddItem(countCapitals);
-            FunctionItem showVersion = new FunctionItem("Show Version");
+            Interfaces.FunctionItem showVersion = new Interfaces.FunctionItem("Show Version");
             showVersion.AddFunction(new ShowVersion());
             versionAndCapitalsMenu.AddItem(showVersion);
 
@@ -34,6 +40,5 @@ namespace Ex04.Menus.Test
 
             m_MainMenu.Show();
         }
-
     }
 }
