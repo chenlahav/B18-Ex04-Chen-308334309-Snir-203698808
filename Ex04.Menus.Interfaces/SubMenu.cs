@@ -65,7 +65,7 @@ namespace Ex04.Menus.Interfaces
             int selection = 0;
             Console.Write("Choose one of the options: ");
             bool result = int.TryParse(Console.ReadLine(), out selection);
-            while (!result)
+            while (!result || selection> m_MenuItems.Count || selection < 0)
             {
                 Console.Write("Invalid input\nChoose one of the options: ");
                 result = int.TryParse(Console.ReadLine(), out selection);

@@ -28,47 +28,57 @@ namespace Ex04.Menus.Interfaces
 
         public void Show()
         {
-            int selection = 0;
-            int? selectionTemporary = 0;
-            do
+            int selection;
+            SubMenu currentMenuItem = m_Menu;
+
+            Console.Clear();
+
+            //selection = m_Menu.ShowMenuAndGetSelectionUser(m_Level);
+            selection =(int) m_Menu.Select(m_Level, ref currentMenuItem);
+
+            while (true)
             {
-                if(m_Level == 1 || selectionTemporary == null)
+                Console.Clear();
+                //check for exit selection
+                if(m_Level== 1 && selection == 0)
                 {
-                    selection = m_Menu.ShowMenuAndGetSelectionUser(m_Level);
-                    selectionTemporary = 0;
+                    break;
                 }
 
+                //check for back selection
+                if ((m_Level != 1 && selection == 0))
+                {
+                    m_Level--;
+                    currentMenuItem = (SubMenu)currentMenuItem.GetMenuItem(selection);
+                }
                 else
                 {
-                    selectionTemporary = m_Menu.GetMenuItem(selection).Select(m_Level, ref m_Menu);
-                    if(selectionTemporary != null)
+                    if (currentMenuItem.GetMenuItem(selection) is SubMenu)
                     {
-                        selection = (int)selectionTemporary;
+                        currentMenuItem = (SubMenu)currentMenuItem.GetMenuItem(selection);
+
+                        if (selection == 0)
+                        {
+                            m_Level--;
+                        }
+                        else
+                        {
+                            m_Level++;
+                        }
+
+
+                    }
+                    else if (currentMenuItem.GetMenuItem(selection) is FunctionItem)
+                    {
+                        ((FunctionItem)currentMenuItem.GetMenuItem(selection)).Select(m_Level, ref currentMenuItem);
+
                     }
                 }
 
-                if (selectionTemporary == null || (selection == 0 && m_Level == 1))
-                {
-                    m_Level--;
-                }
-
-                else if (selection == 0 && m_Level != 1)
-                {
-                    m_Level--;
-                    m_Menu.Title = ((SubMenu)m_Menu.GetMenuItem(0)).Title;
-                    m_Menu.SetMenuItems(((SubMenu)m_Menu.GetMenuItem(0)).GetMenuItems());
-                    Console.Clear();
-                }
-                
-                else if (selection !=0 && selectionTemporary !=null)
-                {
-                    m_Level++;
-                    Console.Clear();
-                }
+                    selection = (int)((SubMenu)currentMenuItem).Select(m_Level, ref currentMenuItem);
             }
-            while (!(selection == 0 && m_Level == 0));
 
-            Console.WriteLine("Thank you!\nBye Bye..");
+            Console.WriteLine("Bye bye");
             Console.ReadLine();
         }
     }
